@@ -1,4 +1,4 @@
-# openssl-encryption-assignment
+Cryptography basics
 Encryption (OPENSSL)
 C:\Users\HP>openssl version
 OpenSSL 3.6.1 27 Jan 2026 (Library: OpenSSL 3.6.1 27 Jan 2026)
