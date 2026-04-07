@@ -30,3 +30,11 @@ The command rsautl was deprecated in version 3.0. Use 'pkeyutl' instead.
 C:\Users\HP>openssl pkeyutl -encrypt -inkey public.pem -pubin -in message.txt -out message.rsa
 
 C:\Users\HP>openssl pkeyutl -decrypt -inkey private.pem -in message.rsa -out decrypted_rsa.txt
+
+Results
+Original message is encrypted and decrypted using AES
+PKEY encryption using public/private key pair
+
+Tools Used
+OpenSSL
+Command Line Interface
