@@ -1,0 +1,29 @@
+C:\Users\HP>openssl genpkey -algorithm RSA -out private.key
+...+......+...............+.......+.....+.+......+.....+.........+......+...+...+++++++++++++++++++++++++++++++++++++++*.......+..+...+....+++++++++++++++++++++++++++++++++++++++*.+.+......+...........+....+......+...+...............+......+...........+.......+......+.....+....++++++
+.+++++++++++++++++++++++++++++++++++++++*.+........+.+.....+...+.+..+....+...+..+.+..............+....+..+.........+.+...+.........+..+...+......+....+......+.....+.......+...+.....+......+......+...+......+.+............+...+...............+..+................+......+......+..+++++++++++++++++++++++++++++++++++++++*..........+.....+......+....+...+........+............+....+...++++++
+
+C:\Users\HP>openssl req -new -x509 -key private.key -out certificate.crt -days 365
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:NG
+State or Province Name (full name) [Some-State]:Lagos
+Locality Name (eg, city) []:Ikeja
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Mentorship for Acceleration
+Organizational Unit Name (eg, section) []:'.'
+Common Name (e.g. server FQDN or YOUR name) []:Mustapha Shukurat
+Email Address []:mustaphashukurat04@gmail.com
+
+C:\Users\HP>openssl x509 -pubkey -noout -in certificate.crt > public.key
+
+C:\Users\HP>echo This is my updated recipe > message.txt
+
+C:\Users\HP>openssl pkeyutl -encrypt -pubin -inkey public.key -in message.txt -out encrypted.bin
+
+C:\Users\HP>openssl pkeyutl -decrypt -inkey private.key -in encrypted.bin -out decrypted.txt
+
+C:\Users\HP>decrypted.txt
